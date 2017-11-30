@@ -7,8 +7,6 @@ A terminal Eng-Chn dictionary.
 
 # 安装
 
-## Linux 或 Mac
-
 ```
 // npm install -g whay
 或者
