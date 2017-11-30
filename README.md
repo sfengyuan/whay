@@ -10,7 +10,7 @@ A terminal Eng-Chn dictionary.
 ```
 npm install -g whay
 或者
-yarn add --dev whay
+yarn global add whay
 ```
 
 # 使用
