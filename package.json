@@ -1,6 +1,6 @@
 {
   "name": "whay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A cli dictionary.",
   "repository": "https://github.com/jacobsun/whay.git",
   "main": "whay.js",
