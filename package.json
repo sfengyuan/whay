@@ -1,0 +1,31 @@
+{
+  "name": "whay",
+  "version": "1.0.0",
+  "description": "A cli dictionary.",
+  "repository": "https://github.com/jacobsun/whay.git",
+  "main": "whay.js",
+  "bin": {
+    "whay": "whay.js"
+  },
+  "scripts": {
+    "prepublish": "npm run lint",
+    "lint": "eslint --fix ./**/*.js --ignore-pattern ./node_modules/**",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jacob.sun.meta@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "caporal": "^0.8.0",
+    "colors": "^1.1.2",
+    "got": "^8.0.0",
+    "jsdom": "^11.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
