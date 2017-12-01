@@ -1,6 +1,6 @@
 {
   "name": "whay",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A cli dictionary.",
   "repository": "https://github.com/jacobsun/whay.git",
   "main": "whay.js",
@@ -15,10 +15,10 @@
   "author": "jacob.sun.meta@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "caporal": "^0.8.0",
-    "colors": "^1.1.2",
+    "chalk": "^2.3.0",
     "got": "^8.0.0",
-    "jsdom": "^11.5.1"
+    "jsdom": "^11.5.1",
+    "minimist": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^4.12.1",

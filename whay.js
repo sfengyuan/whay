@@ -1,21 +1,22 @@
 #!/usr/bin/env node
-const prog = require('caporal')
 const lookup = require('./lib.js').lookup
 const display = require('./lib.js').display
+const help = require('./lib.js').help
 
-prog
-  .version('1.0.0')
-  .description('A simple terminal dictionary')
-  .argument('<word>', 'Word to lookup')
-  .option('--debug [debug]', 'Save results to current directory.')
-  .action(({word}, options, logger) => {
-    lookup(word, options.debug, (err, results) => {
-      if (err) {
-        logger.error(err)
-        process.exit(1)
-      }
-      display(results, logger.info)
-    })
-  })
+const argv = require('minimist')(process.argv.slice(2))
+const log = console.log
+const args = argv._
+const debug = argv.debug
+delete argv._
+delete argv.debug
+if (args.length !== 1 || Object.keys(argv).length > 0 || argv.help) {
+  help(log)
+  process.exit(1)
+}
 
-prog.parse(process.argv)
+lookup(args[0], debug, (err, results) => {
+  if (err) {
+    log(err)
+  }
+  display(results, log)
+})

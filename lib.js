@@ -1,6 +1,5 @@
 const got = require('got')
-/* eslint-disable no-unused-vars */
-const colors = require('colors')
+const chalk = require('chalk')
 const d = require('./dictionary.js')
 const fs = require('fs')
 const headers = {
@@ -25,16 +24,29 @@ const lookup = async (word, debug, cb) => {
   }
 }
 
-const display = (entry, logger) => {
-  logger('\n')
-  logger(entry.keyword.bold.white.bgRed)
-  logger('============================================================='.gray)
-  logger(entry.phonetic.gray)
-  entry.trans.forEach(i => logger(i.green))
-  logger('============================================================='.gray)
+const display = (entry, log) => {
+  log('\n')
+  log(chalk.bgRed.white.bold(entry.keyword))
+  log(chalk.gray('============================================================='))
+  log(chalk.gray(entry.phonetic))
+  entry.trans.forEach(i => log(chalk.green(i)))
+  log(chalk.gray('============================================================='))
+}
+
+const help = (log) => {
+  log(chalk.gray('============================================================='))
+  log(chalk.green.bold('帮助'))
+  log('语法: whay <my-word> [--debug]')
+  log('例子: whay my-word')
+  log('命令: whay')
+  log('参数: 要查询的单词,必选, 唯一')
+  log('选项:')
+  log('--debug          开启调试, 可选')
+  log('--help           查看帮助')
 }
 
 module.exports = {
   lookup,
-  display
+  display,
+  help
 }
