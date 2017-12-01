@@ -7,7 +7,7 @@ A terminal Eng-Chn dictionary.
 
 # 安装
 
-```
+```shell
 npm install -g whay
 //或者
 yarn global add whay
@@ -15,7 +15,7 @@ yarn global add whay
 
 # 使用
 
-```
+```shell
 whay my-word
 
 whay --help
@@ -23,13 +23,11 @@ whay --help
 
 # Api
 
-```
+```javascript
 const whay = require('whay').translate
+
 whay('WordToTranslate', (err, translatedData) => {
-  if (err) {
-    console.log(err)
-    return
-  }
+  if (err) return
   console.log(translatedData)
 })
 
@@ -39,6 +37,7 @@ whay('WordToTranslate', (err, translatedData) => {
   trans: [ '...', '...', ... ]
 }
 ```
+
 # License
 
 MIT
