@@ -2,6 +2,7 @@ const got = require('got')
 const chalk = require('chalk')
 const d = require('./dictionary.js')
 const fs = require('fs')
+
 const headers = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
