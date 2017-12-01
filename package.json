@@ -10,7 +10,7 @@
   "scripts": {
     "prepare": "npm run lint",
     "lint": "eslint --fix ./**/*.js --ignore-pattern ./node_modules/**",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*.js"
   },
   "author": "jacob.sun.meta@gmail.com",
   "license": "MIT",
@@ -21,11 +21,13 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
     "eslint": "^4.12.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^4.0.1"
   }
 }

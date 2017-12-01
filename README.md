@@ -8,9 +8,9 @@ A terminal Eng-Chn dictionary.
 # 安装
 
 ```
-// npm install -g whay
-或者
-// yarn global add whay
+npm install -g whay
+//或者
+yarn global add whay
 ```
 
 # 使用
@@ -21,6 +21,24 @@ whay my-word
 whay --help
 ```
 
+# Api
+
+```
+const whay = require('whay').translate
+whay('WordToTranslate', (err, translatedData) => {
+  if (err) {
+    console.log(err)
+    return
+  }
+  console.log(translatedData)
+})
+
+// translatedData schema
+{ keyword: 'WordToTranslate',
+  phonetic: '[...]',
+  trans: [ '...', '...', ... ]
+}
+```
 # License
 
 MIT
