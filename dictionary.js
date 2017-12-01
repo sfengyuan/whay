@@ -29,6 +29,8 @@ module.exports = {
         Array.prototype.forEach.call(lis, (li) => {
           ret.trans.push(li.textContent)
         })
+      } else {
+        ret.trans.push(':( 无结果!')
       }
 
       return ret
