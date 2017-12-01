@@ -7,13 +7,30 @@ module.exports = {
     extract: (htmldoc) => {
       const {document} = (new JSDOM(htmldoc)).window
       const ret = {}
-      ret.keyword = document.querySelector('.keyword').textContent
-      ret.phonetic = document.querySelector('#phrsListTab .phonetic').textContent
+      const keywordEl = document.querySelector('.keyword')
+      const phoneticEl = document.querySelector('#phrsListTab .phonetic')
+      const lis = document.querySelectorAll('#phrsListTab .trans-container ul li')
+
+      if (!keywordEl) {
+        ret.keyword = ''
+      } else {
+        ret.keyword = keywordEl.textContent
+      }
+
+      if (!phoneticEl) {
+        ret.phonetic = ''
+      } else {
+        ret.phonetic = phoneticEl.textContent
+      }
+
       ret.trans = []
-      let lis = document.querySelectorAll('#phrsListTab .trans-container ul li')
-      Array.prototype.forEach.call(lis, (li) => {
-        ret.trans.push(li.textContent)
-      })
+
+      if (lis.length > 0) {
+        Array.prototype.forEach.call(lis, (li) => {
+          ret.trans.push(li.textContent)
+        })
+      }
+
       return ret
     }
   }

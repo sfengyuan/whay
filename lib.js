@@ -18,6 +18,7 @@ const lookup = async (word, debug, cb) => {
     if (debug) {
       fs.writeFile(`whay-debug-${word}-${Date.now()}.html`, resp.body, err => { if (err) console.log(err) })
     }
+
     cb(null, d.yd.extract(resp.body))
   } catch (error) {
     cb(error.message)
